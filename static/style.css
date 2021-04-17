@@ -1,0 +1,73 @@
+body {
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#ffffff), to(#a6a6a6));
+    
+    /* Safari 5.1+, Chrome 10+ */
+    background: -webkit-radial-gradient(circle, #ffffff, #a6a6a6);
+  
+    /* Firefox 3.6+ */
+    background: -moz-radial-gradient(circle, #ffffff, #a6a6a6);
+  
+    /* IE 10 */
+    background: -ms-radial-gradient(circle, #ffffff, #a6a6a6);
+    height:600px;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    padding-top:20px;
+}
+
+.well {
+    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+.form-adjustment {
+    display: flex;
+    height: 50px;
+}
+
+.custom-select {
+    height: 35px;
+    width: 50%;
+    margin: auto;
+}
+
+.comments-layout {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.message-header-adjust {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.btn {
+    box-shadow: rgba(0, 0, 0, 0.3) 5px 5px 5px;
+}
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.alert > h2 {
+    text-align: center;
+    color: rgb(200, 0, 0);
+}
+
+.alert > p {
+    text-align: center;
+    color: rgb(200, 0, 0);
+}
+
+
+
+

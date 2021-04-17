@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="well well-sm">
+              <form class="form-horizontal" action="/" method="post">
+              <fieldset>
+                <legend class="text-center">Student Survey</legend>
+                {% with messages = get_flashed_messages() %}
+			        {% if messages %}
+				        <div class="alert">
+					        <h2>ALERT!</h2>
+					        {%for message in messages %}
+						        <p> {{message}}</p>
+					        {% endfor %}
+				        </div>
+			        {% endif %}
+		        {% endwith %}
+                <div class="form-group">
+                  <label class="col-md-3 control-label" for="name">Your Name</label>
+                  <div class="col-md-9">
+                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                  </div>
+                </div>
+        
+                <div class="form-adjustment">
+                    <select class="custom-select" name="dojo_id">
+                        <option selected>Dojo Location</option>
+                        {% for dojo in dojos %}
+                            <option value="{{dojo['id']}}">{{dojo['location']}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+        
+                <div class="form-adjustment">
+                    <select class="custom-select" name="language_id">
+                        <option selected>Favorite Language</option>
+                        {% for language in languages %}
+                            <option value="{{language['id']}}">{{language['language']}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="comments-layout">
+                        <label class="message-header-adjust" for="message">Your message</label>
+                        <div class="col-md-12">
+                            <textarea class="form-control" id="message" name="comment" placeholder="Please enter your message here..." rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                  <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                  </div>
+                </div>
+              </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

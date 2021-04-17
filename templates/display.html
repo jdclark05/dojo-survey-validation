@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/display.css') }}">
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Submitted Info:</h4>
+            <div class="student-info">
+                <p class="card-text"> Name: </p> 
+                <p class="card-text">{{student['name']}}</p>
+            </div>
+            <div class="student-info">
+                <p class="card-text"> Dojo Location: </p>
+                <p class="card-text"> {{student['dojo_id']}}</p>
+            </div>
+            <div class="student-info">
+                <p class="card-text"> Favorite Language: </p>
+                <p class="card-text"> {{student['language_id']}}</p>
+            </div>
+            <div class="student-info">
+                <p class="card-text"> Comment:</p>
+                <p class="card-text"> {{student['comment']}}</p>
+            </div>
+            <div class="button-placement">
+                <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
