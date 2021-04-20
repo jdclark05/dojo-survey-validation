@@ -30,13 +30,14 @@
 			        {% endif %}
 		        {% endwith %}
                 <div class="form-group">
-                  <label class="col-md-3 control-label" for="name">Your Name</label>
+                  <label class="col-md-3" for="name">Your Name</label>
                   <div class="col-md-9">
                     <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
                   </div>
                 </div>
         
                 <div class="form-adjustment">
+                  <label class="col-md-3" for="dojo">Dojo</label>
                     <select class="custom-select" name="dojo_id">
                         <option selected>Dojo Location</option>
                         {% for dojo in dojos %}
@@ -46,6 +47,7 @@
                 </div>
         
                 <div class="form-adjustment">
+                  <label class="col-md-3" for="language">Favorite Language</label>
                     <select class="custom-select" name="language_id">
                         <option selected>Favorite Language</option>
                         {% for language in languages %}
@@ -56,7 +58,7 @@
 
                 <div class="form-group">
                     <div class="comments-layout">
-                        <label class="message-header-adjust" for="message">Your message</label>
+                        <label class="commentsHeader" for="message">Your message</label>
                         <div class="col-md-12">
                             <textarea class="form-control" id="message" name="comment" placeholder="Please enter your message here..." rows="5"></textarea>
                         </div>

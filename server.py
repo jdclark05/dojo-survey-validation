@@ -46,12 +46,13 @@ def index():
 
 @app.route('/display/<int:student_id>', methods=["GET"])
 def display(student_id):
-        query = "SELECT * FROM students WHERE students.id = %(student_id)s;"
+        query = "SELECT students.name, dojos.location, languages.language, students.comment FROM students JOIN languages on languages.id = students.language_id JOIN dojos on dojos.id = students.dojo_id WHERE students.id = %(student_id)s;"
         data = {
             "student_id":student_id
         }
         students = connectToMySQL('dojo-survey').query_db(query, data)
-        return render_template("display.html", student=students[0])
+        print(students)
+        return render_template("display.html", students=students)
 
 if __name__ == "__main__":
     app.run(debug=True)
